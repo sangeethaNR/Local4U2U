@@ -1,4 +1,4 @@
-# Project-2: Local 4 U 2 U
+# Project-2: Local4U2U
 
 ## User Story
 

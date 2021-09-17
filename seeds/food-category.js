@@ -2,39 +2,62 @@ const { Food } = require('../models');
 
 const foodData = [
         {
-            name: 'Organic Chocolate Chip',
+            food_name: 'Organic Chocolate Chip',
             image: './images/choc-cookies.jpg',
-            price: 1,
-            store: 'Nana Bakery',
-            countInStock: 35,
-            category: 'bakery'
+            stock: 35,
+            price: 2,
+            store: 'NanasBakery',
+            category_id: 4,
+            subCategory: 3
         },
 
         {
-            name: 'Corn Tamales',
+            food_name: 'Corn Tamales',
             image: './images/tamale-corn.jpg',
+            stock: 40,
             price: 1.50,
-            store: 'Farmers Market',
-            countInStock: 40,
-            category: 'bakery'
+            store: 'NanasBakery',
+            category_id: 4,
+            subCategory: 3
         },
 
         {
-            name: 'Bananas',
-            image: './images/',
-            price: 1,
-            store: 'Farmers Market',
-            countInStock: 30,
-            category: 'condiments '
+            food_name: 'Tiramisu',
+            image: './images/Tiramisu.jpg',
+            stock: 30,
+            price: 8.50,
+            store: 'NothingLikeNonas',
+            category_id: 4,
+            subCategory: 3
         },
 
         {
-            name: 'Popcorn',
-            image: './images/',
+            food_name: 'Marinara Sauce',
+            image: './images/marinara-sauce.jpg',
+            stock: 30,
+            price: 1,
+            store: 'NothingLikeNonas',
+            category_id: 4,
+            subCategory: 5
+        },
+
+        {
+            food_name: 'Barbecue Sauce',
+            image: './images/BBQ-Sauce.jpg',
+            stock: 30,
+            price: 1,
+            store: 'YeehawSauces',
+            category_id: 4,
+            subCategory: 5
+        },
+        {
+            food_name: 'Kettle Corn',
+            image: './images/kettle-corn.jpg',
+            stock: 30,
             price: 1,
             store: 'Farmers Market',
-            countInStock: 30,
-            category: 'snacks '
+            category_id: 4,
+            subCategory: 5
         },
 
 

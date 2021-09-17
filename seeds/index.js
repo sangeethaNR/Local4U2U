@@ -4,10 +4,20 @@ const seedAccess = require('./accessory-category');
 const seedProduce = require('./produce-category');
 const seedFood = require('./food-category');
 
+const { User } = require('../models');
+
+const userData = require('./userData.json');
+
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
+
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
   console.log('\n----- DATABASE SYNCED -----\n');
   
   await seedCategories();

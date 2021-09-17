@@ -7,7 +7,8 @@ const clothesData = [
     stock: 14,
     price: 14.99,
     store_name: 'ClothesMax',
-    category_id: 3
+    category_id: 3,
+    sub_category_id:5
 
   },
   {
@@ -16,7 +17,8 @@ const clothesData = [
     stock: 25,
     price: 90.0,
     store_name: 'ClothesMax',
-    category_id: 3
+    category_id: 3,
+    sub_category_id:5
 
   },
   {
@@ -25,7 +27,8 @@ const clothesData = [
     stock: 12,
     price: 22.99,
     store_name: 'LocalMart',
-    category_id: 3
+    category_id: 3,
+    sub_category_id:5
 
   },
   {
@@ -34,7 +37,8 @@ const clothesData = [
     stock: 50,
     price: 12.99,
     store_name: 'ClothesMax',
-    category_id: 3
+    category_id: 3,
+    sub_category_id:6
 
   },
   {
@@ -43,7 +47,8 @@ const clothesData = [
     price: 29.99,
     stock: 22,
     store_name: 'LocalMart',
-    category_id: 3
+    category_id: 3,
+    sub_category_id:6
 
   },
 ];

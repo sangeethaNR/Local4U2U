@@ -4,11 +4,16 @@ class Produce extends Model {}
 
 Produce.init(
   {
-    name: {
-        type: DataTypes.STRING,
+    produce_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
+      },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      
     },
     image: {
         type: DataTypes.STRING,
@@ -21,7 +26,7 @@ Produce.init(
             isDecimal: true,
         }
     },
-    store: {
+    store_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -33,20 +38,27 @@ Produce.init(
             isNumeric: true,
         }
     },
-    countInStock: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        // What is our default value
-        // defaultValue: 10,
-        validate: {
-            isNumeric: true,
-        }
-    },
-    category: {
+    // countInStock: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: false,
+    //     // What is our default value
+    //     // defaultValue: 10,
+    //     validate: {
+    //         isNumeric: true,
+    //     }
+   // },
+    category_id: {
         type: DataTypes.STRING,
         references: {
-            model: 'produce',
-            key: 'id',
+            model: 'category',
+            key: 'category_id',
+        }
+    },
+    sub_category_id: {
+        type: DataTypes.STRING,
+        references: {
+            model: 'subcategory',
+            key: 'sub_category_id',
         }
     },
   },

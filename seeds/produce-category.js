@@ -8,7 +8,7 @@ const produceData = [
         price: 1,
         store_name: 'Farmers Market',
         category_id: 1,
-        subCategory: 1
+        sub_category_id: 1
     },
 
     {
@@ -18,7 +18,7 @@ const produceData = [
         price: 1.50,
         store_name: 'Farmers Market',
         category_id: 1,
-        subCategory: 1
+        sub_category_id: 1
     },
 
     {
@@ -28,7 +28,7 @@ const produceData = [
         price: 1,
         store_name: 'Farmers Market',
         category_id: 1,
-        subCategory: 1
+        sub_category_id: 1
 
     },
 
@@ -39,7 +39,7 @@ const produceData = [
         Stock: 25,
         store: 'Farmers Market',
         category_id: 1,
-        subCategory: 1
+        sub_category_id: 1
     },
 
     {
@@ -49,7 +49,7 @@ const produceData = [
         Stock: 40,
         store: 'Farmers Market',
         category_id: 1,
-        subCategory: 2
+        sub_category_id: 2
     },
 
     {
@@ -59,7 +59,7 @@ const produceData = [
         Stock: 50,
         store: 'Farmers Market',
         category_id: 1,
-        subCategory: 2
+        sub_category_id: 2
     },
 
     {
@@ -69,7 +69,79 @@ const produceData = [
         Stock: 40,
         store: 'Farmers Market',
         category_id: 1,
-        subCategory: 2
+        sub_category_id: 2
+    },
+    {
+        produce_name: 'Radish',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 2
+    },
+    {
+        produce_name: 'Beef',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 3
+    },
+    ,
+    {
+        produce_name: 'Pork',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 3
+    },
+    
+    {
+        produce_name: 'Fish',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 3
+    },
+    {
+        produce_name: 'Wheat',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 4
+    },
+    {
+        produce_name: 'Quinoa',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 4
+    }, {
+        produce_name: 'Corn',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 4
+    }, {
+        produce_name: 'Farro',
+        image: './images/carrots.jpg',
+        price: 1,
+        Stock: 40,
+        store: 'Farmers Market',
+        category_id: 1,
+        sub_category_id: 4
     },
  ],
 

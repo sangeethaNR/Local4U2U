@@ -6,11 +6,16 @@ class Accessory extends Model {}
 Accessory.init(
   // category needed for male female - pending seed file structure
   {
-    name: {
-      type: DataTypes.STRING,
+    accessory_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    access_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      
     },
 
     price: {
@@ -20,14 +25,18 @@ Accessory.init(
         isDecimal: true,
       }
     },
-
-    countInStock: {
-      type: DataTypes.INTEGER,
+    store_name: {
+      type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isNumeric: true,
-      }
-    },
+  },
+  category_id: {
+    type: DataTypes.STRING,
+    references: {
+        model: 'category',
+        key: 'category_id',
+    }
+},
+    
    },
 
   {

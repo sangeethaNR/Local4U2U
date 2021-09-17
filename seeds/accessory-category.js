@@ -2,28 +2,39 @@ const { Accessories } = require('../models');
 
 const accessData = [
         {
-            name: 'Ribbons',
-            image: './images/',
-            price: 1,
-            store: 'Farmers Market',
-            countInStock: 35,
-            category: 'girl'
+            access_name: 'Shell Bracelet',
+            image: './images/shell-bracelet.jpg',
+            stock: 35,
+            price: 3.50,
+            store_name: 'ClothesMax',
+            category_id: 2
         },
 
         {
-            name: 'leather belt',
-            image: './images/',
+            access_name: 'leather belt',
+            image: './images/leather-belt.jpg',
+            Stock: 12,
             price: 45,
-            store: 'Farmers Market',
-            countInStock: 12,
+            store_name: 'LocalMart',
+            category_id: 2
         },
 
         {
-            name: 'bandana',
-            image: './images/',
-            price: 10,
-            store: 'Farmers Market',
-            countInStock: 30,
+            access_name: 'Bandana-Headscarf',
+            image: './images/Bandana-Headscarf.jpg',
+            stock: 30,
+            price: 12,
+            store_name: 'LocalMart',
+            category_id: 2
+        },
+
+        {
+            access_name: 'Woven Bag',
+            image: './images/Woven-Bag.jpg',
+            stock: 30,
+            price: 35,
+            store_name: 'ClothesMax',
+            category_id: 2
         },
         
     ];

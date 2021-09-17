@@ -4,14 +4,20 @@ class Food extends Model {}
 
 Food.init(
   {
-    name: {
+    food_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      food_name: {
         type: DataTypes.STRING,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
 
-    mage: {
+    image: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -26,22 +32,28 @@ Food.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    countInStock: {
+    stock: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        // What is our default value
-        // defaultValue: 10,
+        defaultValue: 10,
         validate: {
             isNumeric: true,
         }
     },
-    category: {
+    category_id: {
         type: DataTypes.STRING,
         references: {
-            model: 'food',
-            key: 'id',
+            model: 'category',
+            key: 'category_id',
         }
-    }
+    },
+    sub_category_id: {
+        type: DataTypes.STRING,
+        references: {
+            model: 'subcategory',
+            key: 'sub_category_id',
+        }
+    },
   },
   {
     sequelize,

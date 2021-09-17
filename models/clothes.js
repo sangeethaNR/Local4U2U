@@ -4,11 +4,16 @@ class Clothes extends Model {}
 
 Clothes.init(
   {
+    colthes_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     product_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        primaryKey: true,
-        // autoIncrement: true,
+      
     },
         image: {
         type: DataTypes.STRING,
@@ -30,6 +35,24 @@ Clothes.init(
             isNumeric: true,
         }
     },
+    store_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+  },
+  category_id: {
+    type: DataTypes.STRING,
+    references: {
+        model: 'category',
+        key: 'category_id',
+    }
+},
+sub_category_id: {
+    type: DataTypes.STRING,
+    references: {
+        model: 'subcategory',
+        key: 'sub_category_id',
+    }
+},
   },
   {
     sequelize,

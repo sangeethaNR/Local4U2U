@@ -8,7 +8,7 @@ const foodData = [
             price: 2,
             store: 'NanasBakery',
             category_id: 4,
-            subCategory: 3
+            sub_category_id: 8
         },
 
         {
@@ -18,7 +18,7 @@ const foodData = [
             price: 1.50,
             store: 'NanasBakery',
             category_id: 4,
-            subCategory: 3
+            sub_category_id: 9
         },
 
         {
@@ -28,7 +28,7 @@ const foodData = [
             price: 8.50,
             store: 'NothingLikeNonas',
             category_id: 4,
-            subCategory: 3
+            sub_category_id: 9
         },
 
         {
@@ -38,7 +38,7 @@ const foodData = [
             price: 1,
             store: 'NothingLikeNonas',
             category_id: 4,
-            subCategory: 5
+            sub_category_id: 7
         },
 
         {
@@ -48,7 +48,7 @@ const foodData = [
             price: 1,
             store: 'YeehawSauces',
             category_id: 4,
-            subCategory: 5
+            sub_category_id: 7
         },
         {
             food_name: 'Kettle Corn',
@@ -57,7 +57,7 @@ const foodData = [
             price: 1,
             store: 'Farmers Market',
             category_id: 4,
-            subCategory: 5
+            sub_category_id: 8
         },
 
 

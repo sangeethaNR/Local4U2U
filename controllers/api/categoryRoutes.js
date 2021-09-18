@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category } = require('../../models');
+const { Category,SubCategory } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -12,7 +12,7 @@ router.get('/', withAuth, async (req, res) => {
      
       const categories = await Category.findAll({ raw: true });
     
- console.log('catefory' + JSON.stringify(categories))
+ //console.log('catefory' + JSON.stringify(categories))
     res.render('category', {
         categories,
         logged_in: true
@@ -33,21 +33,45 @@ router.get('/', withAuth, async (req, res) => {
   
   // get subcategories for every category
   router.get('/:id', withAuth,async (req, res) => {
+
     try{
-        const subCategoryData = await Post.findAll({
+      if(req.params.id != 2)
+      {
+        const subCategoryData = await SubCategory.findAll({
             where :{
-                id : req.params.id
+                category_id : req.params.id
             },
             attributes :[
                 'id',
-                'name'
+                'name',
+                'category_id'
         ]
         });
         const subCategories = subCategoryData.map((subCategory) => subCategory.get({ plain: true }));
+       console.log('subCategory:' + JSON.stringify(subCategories));
         res.render('subCategory', {
             subCategories,
             logged_in: true
           });
+        }
+        else {
+          const subCategoryData = await SubCategory.findAll({
+            where :{
+                category_id : req.params.id
+            },
+            attributes :[
+                'id',
+                'name',
+                'category_id'
+        ]
+        });
+        const subCategories = subCategoryData.map((subCategory) => subCategory.get({ plain: true }));
+       console.log('subCategory:' + JSON.stringify(subCategories));
+        res.render('subCategory', {
+            subCategories,
+            logged_in: true
+          });
+        }
     }
     catch{
         res.status(500).json(err);

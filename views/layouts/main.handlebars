@@ -65,16 +65,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museum</title>
+  <title>Local4U2U</title>
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
   <header>
-    <h1>Welcome to the Four Seasons Museum</h1>
+    <img src="/images/local4u2u.V2.jpeg" alt="LOCAL4U2U Logo">
+    <h1>Bringing Local Farmer's Market goods to you!</h1>
   </header>
-  <nav >
+  <nav>
     <a href="/">Home</a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
@@ -84,7 +85,7 @@
   </nav>
   <main>
     <aside>
-      <h2>Enjoy the galleries!</h2>
+      <h2>Enjoy the Local Vendors We Have to Offer!</h2>
     </aside>
     <div class="gallery">
       {{{body}}}
@@ -94,5 +95,8 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 </html>

@@ -14,7 +14,7 @@ router.get('/', withAuth, async (req, res) => {
      const categories = categoryData.map((category) => category.get({ plain: true }));
  
     res.render('category', {
-        categories,
+        ...categories,
         logged_in: true
       });
     } catch (err) {

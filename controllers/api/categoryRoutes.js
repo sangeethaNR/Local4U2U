@@ -9,17 +9,26 @@ router.get('/', withAuth, async (req, res) => {
   
     try {
         console.log('checeking user_id :' + req.session.user_id)
-      //post of particular user
-      const categoryData = await Category.findAll({ raw: true });
-     const categories = categoryData.map((category) => category.get({ plain: true }));
- 
+     
+      const categories = await Category.findAll({ raw: true });
+    
+ console.log('catefory' + JSON.stringify(categories))
     res.render('category', {
-        ...categories,
+        categories,
         logged_in: true
       });
     } catch (err) {
       res.status(500).json(err);
     }
+  
+ 
+ 
+ 
+  
+  
+  
+  
+  
   });
   
   // get subcategories for every category
@@ -43,6 +52,7 @@ router.get('/', withAuth, async (req, res) => {
     catch{
         res.status(500).json(err);
     }
-})
+}
+)
 
 module.exports = router;

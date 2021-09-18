@@ -4,7 +4,7 @@ class Clothes extends Model {}
 
 Clothes.init(
   {
-    colthes_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -40,17 +40,17 @@ Clothes.init(
       allowNull: false,
   },
   category_id: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     references: {
         model: 'category',
-        key: 'category_id',
+        key: 'id',
     }
 },
 sub_category_id: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     references: {
         model: 'subcategory',
-        key: 'sub_category_id',
+        key: 'id',
     }
 },
   },

@@ -6,7 +6,7 @@ class Accessory extends Model {}
 Accessory.init(
   // category needed for male female - pending seed file structure
   {
-    accessory_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -30,10 +30,10 @@ Accessory.init(
       allowNull: false,
   },
   category_id: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     references: {
         model: 'category',
-        key: 'category_id',
+        key: 'id',
     }
 },
     

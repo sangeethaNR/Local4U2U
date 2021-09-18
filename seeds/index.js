@@ -3,8 +3,9 @@ const seedClothes = require('./clothes-category');
 const seedAccess = require('./accessory-category');
 const seedProduce = require('./produce-category');
 const seedFood = require('./food-category');
-
-const { User } = require('../models');
+const seedSubCategories = require('./sub-category')
+const { User, Produce,Clothes,Category
+,SubCategory,Accessory,Food } = require('../models');
 
 const userData = require('./userData.json');
 
@@ -22,6 +23,13 @@ const seedAll = async () => {
   
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
+  await seedSubCategories();
+  console.log('\n----- SUB CATEGORIES SEEDED -----\n');
+  await seedProduce();
+  console.log('\n----- PRODUCE SEEDED -----\n');
+  
+  await seedAccess();
+  console.log('\n----- ACCESSORIES SEEDED -----\n');  
 
   await seedClothes();
   console.log('\n----- CLOTHES SEEDED -----\n');
@@ -29,11 +37,7 @@ const seedAll = async () => {
   await seedFood();
   console.log('\n----- FOOD SEEDED -----\n');
 
-  await seedProduce();
-  console.log('\n----- PRODUCE SEEDED -----\n');
   
-  await seedAccess();
-  console.log('\n----- ACCESSORIES SEEDED -----\n');
 
 
   process.exit(0);

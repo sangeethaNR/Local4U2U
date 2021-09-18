@@ -4,7 +4,7 @@ class Food extends Model {}
 
 Food.init(
   {
-    food_id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -13,8 +13,7 @@ Food.init(
       food_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+        
     },
 
     image: {
@@ -41,17 +40,17 @@ Food.init(
         }
     },
     category_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: 'category',
-            key: 'category_id',
+            key: 'id',
         }
     },
     sub_category_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: 'subcategory',
-            key: 'sub_category_id',
+            key: 'id',
         }
     },
   },

@@ -14,9 +14,15 @@ Accessory.init(
     },
     access_name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      
+      allowNull: false,     
     },
+    stock: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+          isNumeric: true,
+      }
+  },
 
     price: {
       type: DataTypes.DECIMAL,

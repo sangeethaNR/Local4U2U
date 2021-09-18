@@ -1,13 +1,13 @@
-const { Accessories } = require('../models');
+const { Accessory } = require('../models');
 
 const accessData = [
         {
-            "access_name": 'Shell Bracelet',
-            "image": './images/shell-bracelet.jpg',
-            "stock": 35,
-            "price": 3.50,
-            "store_name": 'ClothesMax',
-            "category_id": 2
+            access_name: 'Shell Bracelet',
+            image: './images/shell-bracelet.jpg',
+            stock: 35,
+            price: 3.50,
+            store_name: 'ClothesMax',
+            category_id: 2
         },
 
         {
@@ -38,6 +38,7 @@ const accessData = [
         },
         
     ];
-    const seedAccess = () => Accessories.bulkCreate(accessData);
 
-    module.exports = seedAccess;
+const seedAccess = () => Accessory.bulkCreate(accessData);
+
+module.exports = seedAccess;

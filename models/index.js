@@ -53,7 +53,7 @@ Category.hasMany(Accessory, {
 
 
 
-
+//parent to child relation :hasMany
 
 
 

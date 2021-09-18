@@ -4,13 +4,13 @@ class Produce extends Model {}
 
 Produce.init(
   {
-    produce_id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
       },
-    name: {
+      produce_name: {
         type: DataTypes.STRING,
         allowNull: false
       
@@ -48,17 +48,17 @@ Produce.init(
     //     }
    // },
     category_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: 'category',
-            key: 'category_id',
+            key: 'id',
         }
     },
     sub_category_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         references: {
             model: 'subcategory',
-            key: 'sub_category_id',
+            key: 'id',
         }
     },
   },

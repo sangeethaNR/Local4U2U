@@ -2,12 +2,12 @@ const { Accessories } = require('../models');
 
 const accessData = [
         {
-            access_name: 'Shell Bracelet',
-            image: './images/shell-bracelet.jpg',
-            stock: 35,
-            price: 3.50,
-            store_name: 'ClothesMax',
-            category_id: 2
+            "access_name": 'Shell Bracelet',
+            "image": './images/shell-bracelet.jpg',
+            "stock": 35,
+            "price": 3.50,
+            "store_name": 'ClothesMax',
+            "category_id": 2
         },
 
         {

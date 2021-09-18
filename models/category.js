@@ -7,7 +7,7 @@ class Category extends Model {}
 Category.init(
   {
     // define id column
-    category_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

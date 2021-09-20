@@ -3,7 +3,7 @@ const { Produce } = require('../models');
 const produceData = [   
     {
         produce_name: 'Red Apples',
-        image: './images/red-apple.jpg',
+        image: '/images/red-apple.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 35,
@@ -13,7 +13,7 @@ const produceData = [
 
     {
         produce_name: 'Oranges',
-        image: './images/orange.jpg',        
+        image: '/images/orange.jpg',        
         price: '1.50',
         store_name: 'Farmers Market',
         stock: 40,
@@ -23,7 +23,7 @@ const produceData = [
 
     {
         produce_name: 'Bananas',
-        image: './images/bananas.jpg',        
+        image: '/images/bananas.jpg',        
         price: '1',
         store_name: 'Farmers Market',
         stock: 30,
@@ -34,7 +34,7 @@ const produceData = [
 
     {
         produce_name: 'Strawberry',
-        image: './images/strawberry.jpg',
+        image: '/images/strawberry.jpg',
         price: '1',       
         store_name: 'Farmers Market',
         stock: 25,
@@ -44,7 +44,7 @@ const produceData = [
 
     {
         produce_name: 'Broccoli',
-        image: './images/Broccoli.jpg',
+        image: '/images/Broccoli.jpg',
         price: '1',       
         store_name: 'Farmers Market',
         stock: 40,
@@ -54,7 +54,7 @@ const produceData = [
 
     {
         produce_name: 'Asparagus',
-        image: './images/Asparagus.jpeg',
+        image: '/images/Asparagus.jpeg',
         price: '1',     
         store_name: 'Farmers Market',
         stock: 50,
@@ -64,7 +64,7 @@ const produceData = [
 
     {
         produce_name: 'Carrots',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',       
         store_name: 'Farmers Market',
         stock: 40,
@@ -74,7 +74,7 @@ const produceData = [
 
     {
         produce_name: 'Radish',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',      
         store_name: 'Farmers Market',
         stock: 40,
@@ -84,7 +84,7 @@ const produceData = [
 
     {
         produce_name: 'Beef',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',       
         store_name: 'Farmers Market',
         stock: 40,
@@ -94,7 +94,7 @@ const produceData = [
     
     {
         produce_name: 'Pork',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',        
         store_name: 'Farmers Market',
         stock: 40,
@@ -104,7 +104,7 @@ const produceData = [
     
     {
         produce_name: 'Fish',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -114,7 +114,7 @@ const produceData = [
 
     {
         produce_name: 'Wheat',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -124,7 +124,7 @@ const produceData = [
 
     {
         produce_name: 'Quinoa',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -134,7 +134,7 @@ const produceData = [
 
     {
         produce_name: 'Corn',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -144,7 +144,7 @@ const produceData = [
     
     {
         produce_name: 'Farro',
-        image: './images/carrots.jpg',
+        image: '/images/carrots.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,

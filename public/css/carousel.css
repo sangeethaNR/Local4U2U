@@ -1,0 +1,69 @@
+body{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    color:brown;
+}
+
+.carousel{
+    margin-bottom: 1.8rem;
+    z-index: 180;
+}
+
+.carousel-caption{
+    bottom:2.9rem;
+    z-index: 12;
+}
+
+.carousel-item {
+    height: 30rem;
+    background-color: cadetblue;
+}
+
+.carousel-item > img {
+    position: absolute;
+    top:0;
+    left:0;
+    min-width: 100%;
+    height: 30rem;
+}
+
+.marketing .col-lg-4{
+    margin-bottom: 1.4rem;
+    text-align: center;
+}
+
+.marketing h2{
+    font-weight: 420;
+}
+
+.marketing .col-lg-4 p{
+    margin-right: .70rem;
+    margin-left: .70rem;
+}
+
+.featurette-divider{
+    margin: 5.1rem 0;
+}
+
+.featurette-heading {
+    font-weight: 320;
+    line-height: 1;
+    letter-spacing: -.4rem;
+}
+
+@media (min-width:40em) {
+    .carousel-caption p{
+        margin-bottom: 1.2rem;
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    .featurette-header{
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel,.figuritas{
+        display: none;
+    }
+}

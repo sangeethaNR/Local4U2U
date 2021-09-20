@@ -1,12 +1,38 @@
+
 const router = require("express").Router();
 const { Category, SubCategory, Produce, Accessory, Clothes, Food } = require("../../models");
 const withAuth = require("../../utils/auth");
+
 
 // Use withAuth middleware to prevent access to route
 //Default landing page when user hits the webpage
 router.get("/", withAuth, async (req, res) => {
   try {
     console.log("checeking user_id :" + req.session.user_id);
+
+
+    try{
+      if(req.params.id == 2)
+      {
+        const accessoryData = await Accessory.findAll({
+            where :{
+                category_id : req.params.id
+            },
+            attributes :[
+                'id',
+                'access_name',
+                'stock',
+                'image',
+                'price',
+                'store_name'
+        ]
+        });
+        const accessories = accessoryData.map((accesory) => accesory.get({ plain: true }));
+       console.log('accessory:' + JSON.stringify(accessories));
+        res.render('accessory', {
+          accessories,
+            logged_in: true
+          });
 
     const categories = await Category.findAll({ raw: true });
 
@@ -36,6 +62,7 @@ router.get("/:id", withAuth, async (req, res) => {
       const categories = await Category.findAll({
         where: {
           id: req.params.id
+
         }
       })
       console.log("subCategory:" + JSON.stringify(subCategories));

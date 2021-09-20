@@ -16,6 +16,11 @@ Accessory.init(
       type: DataTypes.STRING,
       allowNull: false,     
     },
+    
+  image: {
+    type: DataTypes.STRING,
+    allowNull: false
+},
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -23,7 +28,6 @@ Accessory.init(
           isNumeric: true,
       }
   },
-
     price: {
       type: DataTypes.DECIMAL,
       allowNull: false,

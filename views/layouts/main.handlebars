@@ -66,6 +66,52 @@
     </header> --}}
    
 
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local4U2U</title>
+  {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+
+<div class="text-center">
+    <img src="../images/local4u2u.jpeg" class="img-fluid" alt="LOCAL4u2u Logo">
+    <h1>Bringing Local Farmer's Market goods to you!</h1>
+    </div>
+  </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">  <a href="/">Home</a></li>
+  </ol>  
+    {{#if logged_in}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item active"><a href="/login">Login</a></li>
+    </ol>
+    {{/if}}
+  </nav>
+  <main>
+    ​<picture>
+   {{!-- <img src="../images/backgroundHome.jpeg" class="img-fluid img-thumbnail" alt="Farmer's Market."> --}}
+</picture>
+    <aside>
+      <h2 class="Vendor">Enjoy the Local Vendors We Have to Offer!</h2>
+    </aside>
+    <div class="vendor">
+      {{{body}}}
+    </div>
+  </main>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
       <div class="vendor">
         {{{body}}}
       </div>

@@ -1,0 +1,10 @@
+<section class="container">
+{{#if logged_in}}
+{{#each accessories as |accessory|}}
+{{> accessory-partials}}
+{{/each}}
+</section>
+<!-- Otherwise, provide a link to login -->
+{{else}}
+<a href="/login">You must login first to view the Categories</a>
+{{/if}}

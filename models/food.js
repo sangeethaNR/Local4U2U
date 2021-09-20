@@ -27,7 +27,7 @@ Food.init(
             isDecimal: true,
         }
     },
-    store: {
+    store_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },

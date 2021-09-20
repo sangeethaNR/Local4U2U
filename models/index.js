@@ -5,6 +5,7 @@ const Food = require('./food');
 const Accessory = require('./accessory');
 const User = require('./user');
 const SubCategory = require('./subCategory');
+const Order = require('./Order');
 // Are we able to use One to One; One to Many
 Produce.belongsTo(Category, {
     foreignKey: 'category_id'
@@ -21,6 +22,9 @@ Clothes.belongsTo(Category, {
 SubCategory.belongsTo(Category,{
     foreignKey :'category_id'
 });
+Order.belongsTo(User, {
+    foreignKey: "id"
+})
 
 
 Produce.belongsTo(SubCategory, {
@@ -49,6 +53,9 @@ Category.hasMany(Clothes, {
 Category.hasMany(Accessory, {
     foreignKey: 'category_id',
 });
+User.hasMany(Order, {
+    foreignKey: "user_id"
+})
 
 
 

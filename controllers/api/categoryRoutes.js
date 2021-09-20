@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category,SubCategory } = require('../../models');
+const { Category,SubCategory, Accessory } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -35,22 +35,25 @@ router.get('/', withAuth, async (req, res) => {
   router.get('/:id', withAuth,async (req, res) => {
 
     try{
-      if(req.params.id != 2)
+      if(req.params.id == 2)
       {
-        const subCategoryData = await SubCategory.findAll({
+        const accessoryData = await Accessory.findAll({
             where :{
                 category_id : req.params.id
             },
             attributes :[
                 'id',
-                'name',
-                'category_id'
+                'access_name',
+                'stock',
+                'image',
+                'price',
+                'store_name'
         ]
         });
-        const subCategories = subCategoryData.map((subCategory) => subCategory.get({ plain: true }));
-       console.log('subCategory:' + JSON.stringify(subCategories));
-        res.render('subCategory', {
-            subCategories,
+        const accessories = accessoryData.map((accesory) => accesory.get({ plain: true }));
+       console.log('accessory:' + JSON.stringify(accessories));
+        res.render('accessory', {
+          accessories,
             logged_in: true
           });
         }

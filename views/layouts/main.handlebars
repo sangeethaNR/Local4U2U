@@ -66,34 +66,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Local4U2U</title>
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
   <header>
-    <img src="../public/images/local4u2u.jpeg" alt="LOCAL4U2U Logo">
+
+<div class="text-center">
+    <img src="../images/local4u2u.jpeg" class="img-fluid" alt="LOCAL4u2u Logo">
     <h1>Bringing Local Farmer's Market goods to you!</h1>
+    </div>
   </header>
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <a href="/">Home</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">  <a href="/">Home</a></li>
+  </ol>  
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
-    <a href="/login">Login</a> 
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item active"><a href="/login">Login</a></li>
+    </ol>
     {{/if}}
   </nav>
   <main>
+    ​<picture>
+   {{!-- <img src="../images/backgroundHome.jpeg" class="img-fluid img-thumbnail" alt="Farmer's Market."> --}}
+</picture>
     <aside>
       <h2 class="Vendor">Enjoy the Local Vendors We Have to Offer!</h2>
     </aside>
-    <div class="gallery">
+    <div class="vendor">
       {{{body}}}
     </div>
   </main>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
 </body>
 
 <!-- JavaScript Bundle with Popper -->

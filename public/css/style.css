@@ -29,6 +29,35 @@ body {
   margin-left: -5px;
 }
 
+.imgFilter{
+  filter: brightness(0.50);
+}
+
+.hero {
+  height: 100vh;
+  background: url(/images/backgroundHome.jpeg);
+  position: relative
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.699);
+  height: 100vh;
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  /* right: 25% */
+  margin: 0 auto
+}
+.hero-content a {
+  display: block;
+  margin: 0 auto;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+  width: fit-content;
+  text-decoration: none
+}
 
 
 /*!

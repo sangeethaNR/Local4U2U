@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
+const Handlebars = require('handlebars')
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
@@ -29,6 +30,7 @@ app.use(session(sess));
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+// Handlebars.registerPartial('cart', '{{prefix}}');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

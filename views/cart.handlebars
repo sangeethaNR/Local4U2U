@@ -1,3 +1,25 @@
 <section id="cart">
     My shopping list
+ <div class="">
+    {{#each cart_products as | products|}}
+      {{!-- <button class="category_btn" data-id={{subCategory.id}}>{{subCategory.name}}</button> --}}
+    <div class="card" style="width: 18rem;">
+            <img src={{item_image}} class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">Product:{{item_name}}</h5>         
+            <p class="card-text">Price:{{item_price}}</p>
+              <p class="card-text">{{quantity}}</p>
+             <p class="card-text">total :{{total}}</p>
+
+            {{!-- <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button> --}}
+            </div>
+        </div>
+    {{/each}}
+  </div>
+  <div class="products-container">
+    
+  </div>
+
 </section>
+
+{{!-- <script src="/js/renderCart.js"></script> --}}

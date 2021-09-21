@@ -7,7 +7,7 @@ const orderRoutes = require('./orderController');
 //const dashboardRoutes = require('./dashboard-routes.js');
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
-router.use('/', orderRoutes);
+router.use('/cart', orderRoutes);
 //router.use('/dashboard', dashboardRoutes);
 
 module.exports = router;

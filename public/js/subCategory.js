@@ -11,6 +11,7 @@ function fetchData(e) {
   .then(data => {
       displayProducts(data)
   })
+  .catch(err => console.log(err))
 }
 
 function displayProducts(data) {
@@ -31,13 +32,17 @@ function displayProducts(data) {
             <p class="card-text">${item.store_name}</p>
             <p class="card-text">${item.stock}</p>
             <p class="card-text">${item.price}</p>
-            <a href="#" class="btn btn-primary">Add to Cart</a>
+            <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button>
             </div>
         </div>
         `;
         productsContainer.innerHTML += output
-    })
+        document.querySelectorAll("button.btn-secondary").forEach(i => {
+          i.setAttribute("onclick", `addToCart('${JSON.stringify(data)}', event)`)
+        })
+      })
 }
+
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => fetchData(e));

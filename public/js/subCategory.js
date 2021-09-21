@@ -30,8 +30,8 @@ function displayProducts(data) {
             <div class="card-body">
             <h5 class="card-title">${name}</h5>
             <p class="card-text">${item.store_name}</p>
-            <p class="card-text">${item.stock}</p>
-            <p class="card-text">${item.price}</p>
+            <p class="card-text">In stock :${item.stock}</p>
+            <p class="card-text">Price :$${item.price}</p>
             <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button>
             </div>
         </div>

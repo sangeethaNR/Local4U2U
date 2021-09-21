@@ -1,49 +1,45 @@
-const buttons = document.querySelectorAll(".category_btn");
-const productsContainer = document.querySelector(".products-container")
+// function addToCart(id,image,access_name,store_name,stock,price) {
+  function addToCart(){
+//   console.log(obj.id);
+//   console.log("imsg:" + obj.access_name)
+//  // const data = JSON.parse(body);
+//   const id =obj.id;
+//   const name = obj.access_name;
 
-function fetchData(e) {
-  const id = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 1
-  ];
-  const category_id = e.target.dataset.id
-  fetch(`/api/category/${id}/item/${category_id}`)
-  .then(res => res.json())
-  .then(data => {
-      displayProducts(data)
-  })
-  .catch(err => console.log(err))
+fetch("/cart", {
+  method: "POST",
+  body: JSON.stringify({
+    product_id: 1,
+    item_name: "Shell Bracelet",
+    item_price: 4,
+    item_image: '/images/shell-bracelet.jpg',
+    quantity: 1,
+  }),
+  headers: {
+    "Content-Type": "Application/json",
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+    console.log("item added");
+  });
+  // fetch("/cart", {
+  //   method: "POST",
+  //   body: JSON.stringify({
+  //     product_id: obj.id,
+  //     item_name: obj.access_name,
+  //     item_price: obj.price,
+  //     item_image: obj.image,
+  //     quantity: 1,
+  //   }),
+  //   headers: {
+  //     "Content-Type": "Application/json",
+  //   },
+  // })
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //     console.log("item added");
+  //   });
 }
-
-function displayProducts(data) {
-    productsContainer.innerHTML = ""
-    let name = ""
-    console.log(data)
-    let output = ""
-    data.forEach(item => {
-        if(item.produce_name) name = item.produce_name
-        if(item.food_name) name = item.food_name
-        if(item.product_name) name = item.product_name
-        console.log(name)
-        output = `
-        <div class="card" style="width: 18rem;">
-            <img src=${item.image} class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">${name}</h5>
-            <p class="card-text">${item.store_name}</p>
-            <p class="card-text">${item.stock}</p>
-            <p class="card-text">${item.price}</p>
-            <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button>
-            </div>
-        </div>
-        `;
-        productsContainer.innerHTML += output
-        document.querySelectorAll("button.btn-secondary").forEach(i => {
-          i.setAttribute("onclick", `addToCart('${JSON.stringify(data)}', event)`)
-        })
-      })
-}
-
-
-buttons.forEach((button) => {
-  button.addEventListener("click", (e) => fetchData(e));
-});

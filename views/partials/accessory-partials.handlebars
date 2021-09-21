@@ -9,11 +9,21 @@
   <h2> {{access_name}}</h2>
   Price : {{price}}
   In Stock :{{stock}}
+   <button data-id=${{id}} data-name=${{access_name}} class="btn btn-secondary" >Add to Cart </button>
+            
 
         </div>
     </div>
        
 </div>
+<script >
+ // const dataPack = {data.id :{{id}},image:{{image}},data-name:{{access_name}},price:{{price}},stock:{{stock}} }
+  document.querySelectorAll("button.btn-secondary").forEach(i => {
+    i.setAttribute("onclick", `addToCart('${JSON.stringify({{id}},{{access_name}},{{price}}
+         {{stock}},{{image}})}', event)`)
+  })
+</script>
+<script src="/js/renderCart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 

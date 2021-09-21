@@ -23,7 +23,7 @@ SubCategory.belongsTo(Category,{
     foreignKey :'category_id'
 });
 Order.belongsTo(User, {
-    foreignKey: "id"
+    foreignKey: 'user_id'
 })
 
 
@@ -88,5 +88,6 @@ module.exports = {
   Accessory,
   Clothes,
   Food,  
+  Order,
   User
 };

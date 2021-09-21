@@ -1,4 +1,5 @@
 function addToCart(body, event) {
+  
   const data = JSON.parse(body);
   const id = event.target.dataset.id;
   const name = event.target.dataset.name;
@@ -8,7 +9,7 @@ function addToCart(body, event) {
   fetch("/cart", {
     method: "POST",
     body: JSON.stringify({
-      id: filteredItem.id,
+      product_id: filteredItem.id,
       item_name: name,
       item_price: filteredItem.price,
       item_image: filteredItem.image,

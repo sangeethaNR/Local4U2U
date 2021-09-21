@@ -8,15 +8,16 @@ Order.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: false,
-      },
+        autoIncrement: true,      },
       user_id: {
         type: DataTypes.INTEGER,
+        allowNull:false,
         references: {
             model: 'user',
             key: 'id',
         }
       },
+     
       item_name: {
           type: DataTypes.STRING,
           allowNull: false
@@ -34,6 +35,10 @@ Order.init(
           allowNull: false
       },
       total: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      product_id:{
         type: DataTypes.INTEGER,
         allowNull: false
       }

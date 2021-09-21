@@ -1,95 +1,26 @@
-//Global scope
-var products = JSON.parse(localStorage.getItem('cart'));
-var cartItems=[];
-var cart_n = document.getElementById('cart_n');
-var table = document.getElementById('table');
-var total = 0;
+function addToCart(body, event) {
+  const data = JSON.parse(body);
+  const id = event.target.dataset.id;
+  const name = event.target.dataset.name;
+  const filteredItem = data.find((item) => item.id == id);
+  console.log(filteredItem);
 
-//HTML table
-function tableHTML(i) {
-    return `
-    <tr>
-        <th scope = "row"> ${i+1} </th>
-        <th><img style = "width:95px;" src = " ${products[i].url}"></th>
-        <td>${products[i].name}</td>
-        <td>1</td>
-        <td>${products[i].price}</td>
-    </tr>
-
-    `;
+  fetch("/cart", {
+    method: "POST",
+    body: JSON.stringify({
+      id: filteredItem.id,
+      item_name: name,
+      item_price: filteredItem.price,
+      item_image: filteredItem.image,
+      quantity: 1,
+    }),
+    headers: {
+      "Content-Type": "Application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      console.log("item added");
+    });
 }
-
-//Clean
-
-function clean() {
-    localStorage.clear();
-    for (let index = 0; index < products.length; index++) {
-        table.innerHTML += tableHTML(index);
-        total=total+parseInt(products[index].price);
-    }
-
-    total =0;
-    table.innerHTMl= `
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-    
-    `;
-
-    cart_n.innerHTML ='';
-    document.getElementById("btnBuy").style.display="none";
-    document.getElementById("btnClean").style.display="none";
-}
-
-(()=>{
-    for (let index = 0; index <products.length; index++) {
-        table.innerHTML+=tableHTML(index);
-        total = total+ parseInt(products[index].price);
-    }
-    table.innerHTML+=`
-    <tr>
-        <th scope = "col"></th>
-        <th scope = "col"></th>
-        <th scope = "col"></th>
-        <th scope = "col"></th>
-        <th scope = "col">Total: $${total}.00</th>
-    </tr>
-    <tr>
-    <th scope = "col"></th>
-    <th scope = "col"></th>
-    <th scope = "col"></th>
-    <th scope = "col">
-        <button id = "btnClean" onclick = "clean()" class ="btn text-white btn-warning">
-            Clean Shopping Cart
-        </button>
-    </th>
-    <th scope = "col">
-        <form id = "form1" action = "/cart" method = "POST" autocomplete = "off">
-            <input type = "hidden" name = "total" value = "${total}">
-            <input type = "hidden" name = "_id" value = "">
-            <button id = "submitBtn" class = "btn btn-success">Buy</button>
-        </form>
-    </th>
-    </tr>
-    `;
-    products = JSON.parse(localStorage.getItem('cart'));
-    cart_n.innerHTML = `[${products.lenght}]`;
-})();
-
-var form = document.getElementById('form1');
-document.getElementById('submitBtn').addEventListener('click',()=>{
-    localStorage.clear();
-    setTimeout(()=>{
-        sub();
-    }),5000;
-});
-
-function sub() {
-    setTimeout(()=>{
-        form.submit();
-    },5000);
-};

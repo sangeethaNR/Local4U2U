@@ -74,7 +74,7 @@ const produceData = [
 
     {
         produce_name: 'Radish',
-        image: '/images/carrots.jpg',
+        image: '/images/radishes.jpg',
         price: '1',      
         store_name: 'Farmers Market',
         stock: 40,
@@ -83,8 +83,8 @@ const produceData = [
     },
 
     {
-        produce_name: 'Beef',
-        image: '/images/carrots.jpg',
+        produce_name: 'Grass fed Beef',
+        image: '/images/beef.jpg',
         price: '1',       
         store_name: 'Farmers Market',
         stock: 40,
@@ -93,8 +93,8 @@ const produceData = [
     },
     
     {
-        produce_name: 'Pork',
-        image: '/images/carrots.jpg',
+        produce_name: 'Pork Chop',
+        image: '/images/porkchop.jpg',
         price: '1',        
         store_name: 'Farmers Market',
         stock: 40,
@@ -103,8 +103,8 @@ const produceData = [
     },
     
     {
-        produce_name: 'Fish',
-        image: '/images/carrots.jpg',
+        produce_name: 'Salmon',
+        image: '/images/salmon.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -114,7 +114,7 @@ const produceData = [
 
     {
         produce_name: 'Wheat',
-        image: '/images/carrots.jpg',
+        image: '/images/wheat.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -124,7 +124,7 @@ const produceData = [
 
     {
         produce_name: 'Quinoa',
-        image: '/images/carrots.jpg',
+        image: '/images/quinoa.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -134,7 +134,7 @@ const produceData = [
 
     {
         produce_name: 'Corn',
-        image: '/images/carrots.jpg',
+        image: '/images/corn.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,
@@ -144,7 +144,7 @@ const produceData = [
     
     {
         produce_name: 'Farro',
-        image: '/images/carrots.jpg',
+        image: '/images/farro.jpg',
         price: '1',
         store_name: 'Farmers Market',
         stock: 40,

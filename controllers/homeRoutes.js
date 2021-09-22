@@ -24,7 +24,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/item/:id", (req, res) => {
+router.get("/item/:id",withAuth, (req, res) => {
   res.render("item");
 });
 

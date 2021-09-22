@@ -40,7 +40,7 @@ const {Order,User} = require("../models");
 //     res.status(500).json(error);
 //   }
 // });
-router.post("/", async (req, res) => {
+router.post("/",withAuth, async (req, res) => {
   const { product_id, item_name, item_image, item_price, quantity } = req.body;
   
   console.log('seesion id:' + req.session.user_id)

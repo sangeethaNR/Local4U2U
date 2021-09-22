@@ -8630,7 +8630,7 @@ fieldset:disabled .btn {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: #8C8!important;
+  background-color: #43cc29!important;
 }
 
 .bg-black {
@@ -12316,7 +12316,7 @@ label {
 }
 
 .btn {
-  background-color: #8c8;
+  background-color: #43cc29;
   color: white;
   padding: 12px;
   margin: 10px 0;

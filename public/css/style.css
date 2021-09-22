@@ -43,7 +43,7 @@ body {
   height: 100vh;
 }
 .hero-content {
-  position: absolute;
+  position: relative;
   top: 50%;
   /* right: 25% */
   margin: 0 auto
@@ -4620,7 +4620,7 @@ fieldset:disabled .btn {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     -ms-flex-pack: start;
-    justify-content: flex-end;
+    justify-content: flex-between;
 
   }
   .navbar-expand-lg .navbar-nav {

@@ -1,127 +1,139 @@
-
-<html lang="en">
-
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local4U2U</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/a99135b659.js" crossorigin="anonymous"></script>
-  <link rel = "stylesheet" href = "/css/carousel.css">
-  <link rel = "stylesheet" href = "/css/style.css">
-  </head>
-
-  <body>
-      <header>
-    <nav class ="navbar fixed-top navbar-dark navbar-expand-md bg-success text-white">
-    <a class = "text-white navbar-brand" href = "/">
-    <i class = "fab fa-pagelines"></i> Local4U2U
-    </a>
-    <button class = "navbar-toggler" type = "button" data-toggle = "collapse" 
-    data-target = "#navbarCollapse" aria-controls = "navbarCollapse" aria-expanded = "false"
-    aria-label = "Toggle navigation" >
-        <span class = "navbar-toggler-icon"></span>
-    </button>
-
-    <div class = "collapse navbar-collapse justify-content-around" id = "navbarCollapse">
-        <ul class="navbar-nav mr-auto menu">
-            <li class = "nav-item">
-                <a href = "/" class="nav-link"> Home</a>
-            </li>
-            <li class = "nav-item">
-                <a href = "/api/category/1" class="nav-link"> Produce</a>
-            </li>
-            <li class = "nav-item">
-                <a href = "/api/category/2" class="nav-link"> Accessories</a>
-            </li>
-            <li class = "nav-item">
-                <a href = "/api/category/3" class="nav-link"> Clothes</a>
-            </li>
-            <li class = "nav-item">
-                <a href = "/api/category/4" class="nav-link"> Foods</a>
-            </li>
-        </ul>
-        <div class = "d-flex mt-2 mt-md-0">
-            <a href = "/cart" class = "text-white nav-link">
-                <i class = "text-warning fas fa-shopping-cart">
-                </i> Shopping Cart <i style = "color:yellowgreen" id ="cart_n"></i>
-            </a>
-            <a href = "/user" class = "nav-link text-white">
-                <i class = "far fa-user"></i> User
-            </a>
-        </div>
-    </div>
-</nav>
-</header>
-    {{!-- <header>
-
-      <div class="text-center">
-        <img
-          src="../images/local4u2u.jpeg"
-          class="img-fluid"
-          alt="LOCAL4u2u Logo"
-        />
-        <h1>Bringing Local Farmer's Market goods to you!</h1>
-      </div>
-    </header> --}}
-   
-
-    <!DOCTYPE html>
-<html lang="en">
+{{!-- <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Local4U2U</title>
-  {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 
 <body>
   <header>
+    <nav class="navbar fixed-top navbar-dark navbar-expand-md bg-success text-white">
+      <a class="text-white navbar-brand" href="/">
+        <i class="fab fa-pagelines"></i> Local4U2U
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<div class="text-center">
-    <img src="../images/local4u2u.jpeg" class="img-fluid" alt="LOCAL4u2u Logo">
-    <h1>Bringing Local Farmer's Market goods to you!</h1>
-    </div>
-  </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active">  <a href="/">Home</a></li>
-  </ol>  
-    {{#if logged_in}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <ol class="breadcrumb">
-    <li class="breadcrumb-item active"><a href="/login">Login</a></li>
-    </ol>
-    {{/if}}
-  </nav>
-  <main>
-    ​<picture>
-   {{!-- <img src="../images/backgroundHome.jpeg" class="img-fluid img-thumbnail" alt="Farmer's Market."> --}}
-</picture>
-    <aside>
-      <h2 class="Vendor">Enjoy the Local Vendors We Have to Offer!</h2>
-    </aside>
-   
-  </main>
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-
-      <div class="vendor">
-        {{{body}}}
+      <div class="collapse navbar-collapse justify-content-around" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto menu">
+          <li class="nav-item">
+            <a href="/" class="nav-link"> Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/api/category/1" class="nav-link"> Produce</a>
+          </li>
+          <li class="nav-item">
+            <a href="/api/category/2" class="nav-link"> Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a href="/api/category/3" class="nav-link"> Clothes</a>
+          </li>
+          <li class="nav-item">
+            <a href="/api/category/4" class="nav-link"> Foods</a>
+          </li>
+        </ul>
+        <div class="d-flex mt-2 mt-md-0">
+          <a href="/cart" class="text-white nav-link">
+            <i class="text-warning fas fa-shopping-cart">
+            </i> Shopping Cart <i style="color:yellowgreen" id="cart_n"></i>
+          </a>
+          <a href="/user" class="nav-link text-white">
+            <i class="far fa-user"></i> User
+          </a>
+        </div>
       </div>
+    </nav>
+  </header> --}}
+  {{!-- <header>
+
+    <div class="text-center">
+      <img src="../images/local4u2u.jpeg" class="img-fluid" alt="LOCAL4u2u Logo" />
+      <h1>Bringing Local Farmer's Market goods to you!</h1>
+    </div>
+  </header> --}}
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local4U2U</title>
+    {{!--
+    <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/a99135b659.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="text-center">
+        <img src="/images/local4u2u.jpeg" class="img-fluid" alt="LOCAL4u2u Logo">
+        <h1>Bringing Local Farmer's Market goods to you!</h1>
+      </div>
+    </header>
+    <nav class="navbar fixed navbar-expand-lg navbar-dark bg-dark">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active"> <a href="/"><i class="fab fa-pagelines"></i> Home</a></li>
+      </ol>
+      {{#if logged_in}}
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">
+          <a href="/api/category/1" class="nav-link"> Produce</a>
+        </li>
+        <li class="breadcrumb-item active">
+          <a href="/api/category/2" class="nav-link"> Accessories</a>
+        </li>
+        <li class="breadcrumb-item active">
+          <a href="/api/category/3" class="nav-link"> Clothes</a>
+        </li>
+        <li class="breadcrumb-item active">
+          <a href="/api/category/4" class="nav-link"> Foods</a>
+      
+      </ol>
+      <a href="/cart" class="nav-link">
+            <i class="text-warning fas fa-shopping-cart">
+            </i> Shopping Cart</a>
+
+            <a href="/user" class="nav-link ">
+            <i class="far fa-user"></i> User
+          </a>
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><a href="/login">Login</a></li>
+      </ol>
+      {{/if}}
+    </nav>
+    <main>
+      ​<picture>
+        {{!-- <img src="../images/backgroundHome.jpeg" class="img-fluid img-thumbnail" alt="Farmer's Market."> --}}
+      </picture>
+      <aside>
+        <h2 class="Vendor">Enjoy the Local Vendors We Have to Offer!</h2>
+      </aside>
+
+    </main>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+    <div class="vendor">
+      {{{body}}}
+    </div>
     </main>
 
   </body>
 
   <!-- JavaScript Bundle with Popper -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"
-  ></script>
+    crossorigin="anonymous"></script>
 
-</html>
+  </html>

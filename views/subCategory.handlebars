@@ -1,13 +1,14 @@
 <section>
   <div class="sub-categories">
     {{#each subCategories as |subCategory|}}
-      <button class="category_btn" data-id={{subCategory.id}}>{{subCategory.name}}</button>
+    <button class="category_btn" data-id={{subCategory.id}}>{{subCategory.name}}</button>
     {{/each}}
   </div>
   <div class="products-container">
-    
+
   </div>
 </section>
 
 <script src="/js/subCategory.js"></script>
 <script src="/js/cart.js"></script>
+<script src="sweetalert2.all.min.js"></script>

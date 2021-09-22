@@ -83,7 +83,9 @@
         <li class="breadcrumb-item active"> <a href="/"><i class="fab fa-pagelines"></i> Home</a></li>
       </ol>
       {{#if logged_in}}
-      <button id="logout" class="btn-no-style">Logout</button>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" id="logout">Logout</button>
+      </ol>
       {{else}}
       <ol class="breadcrumb">
         <li class="breadcrumb-item active"><a href="/login">Login</a></li>

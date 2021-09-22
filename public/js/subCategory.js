@@ -34,7 +34,7 @@ function displayProducts(data) {
               <p class="card-text">In stock :${item.stock}</p>
               <p class="card-text">Price :$${item.price}</p>
               <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5">
+            <input type="number" id="quantity" name="quantity" min="1" max="5" value="1">
             <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button>
           </div>
         </div>

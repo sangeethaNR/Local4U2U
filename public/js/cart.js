@@ -1,14 +1,20 @@
 // const Swal = require("sweetalert2")
+
+
+
 // import Swal from 'sweetalert2'
-function fetchApi(body, quantity) {
+function fetchApi(body, numerOfProduct) {
+  //const data = JSON.parse(body);
+
   fetch("/cart", {
     method: "POST",
     body: JSON.stringify({
       product_id: body.id,
       item_name: body.name,
-      item_price: body.price,
+      item_price: parseInt(body.price),
       item_image: body.image,
-      quantity: Number(quantity),
+      quantity: parseInt(numerOfProduct),
+    total :parseInt(body.price) * parseInt(numerOfProduct)
     }),
     headers: {
       "Content-Type": "Application/json",
@@ -39,8 +45,10 @@ function fetchApi(body, quantity) {
 }
 function addToCart(body, event) {
   const data = JSON.parse(body);
+
   const id = event.target.dataset.id;
   const name = event.target.dataset.name;
+
   const filteredItem = data.find((item) => item.id == id);
   filteredItem.name = name
 

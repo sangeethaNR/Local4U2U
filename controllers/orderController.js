@@ -41,9 +41,8 @@ const {Order,User} = require("../models");
 //   }
 // });
 router.post("/",withAuth, async (req, res) => {
-  const { product_id, item_name, item_image, item_price, quantity } = req.body;
+  const { product_id, item_name, item_image, item_price, quantity,total} = req.body;
   
-  console.log('seesion id:' + req.session.user_id)
   const findProduct = await Order.findOne({
     where:{  
       product_id: product_id,
@@ -89,9 +88,9 @@ try{
       user_id: req.session.user_id,      
       item_name:item_name,
       item_image:item_image,
-      item_price:parseInt(item_price),
+      item_price:item_price,
       quantity:quantity,
-      total: (quantity * item_price),
+      total: total,
       product_id:product_id
     });
     res.json(createdOrder);

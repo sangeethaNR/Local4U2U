@@ -17,13 +17,13 @@ function fetchData(e) {
 function displayProducts(data) {
     productsContainer.innerHTML = ""
     let name = ""
-    console.log(data)
+   // console.log(data)
     let output = ""
     data.forEach(item => {
         if(item.produce_name) name = item.produce_name
         if(item.food_name) name = item.food_name
         if(item.product_name) name = item.product_name
-        console.log(name)
+       // console.log(name)
         output = `
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card" style="width: 12rem; align: center; height= auto; display: inline">

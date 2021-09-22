@@ -31,6 +31,7 @@ router.get("/", withAuth,async(req, res) => {
 
 router.get("/finish", withAuth,async(req, res) => {
   try{
+    
     const postData = await Order.destroy({
       where: {
        

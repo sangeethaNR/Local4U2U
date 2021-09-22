@@ -35,7 +35,6 @@ function displayProducts(data) {
             <label for="quantity">Quantity:</label>
            <input type="number" id="quantity" name="quantity" min="1" max="5" value ="1">
             <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button>
-            </div>
         </div>
         `;
         productsContainer.innerHTML += output

@@ -35,6 +35,7 @@ Accessory.init(
         isDecimal: true,
       }
     },
+   
     store_name: {
       type: DataTypes.STRING,
       allowNull: false,

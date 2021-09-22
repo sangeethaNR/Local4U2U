@@ -1,25 +1,36 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/a99135b659.js" crossorigin="anonymous"></script>
+  
+  <link rel = "stylesheet" href = "/css/style.css">
 <section id="cart">
     My shopping list
- <div class="">
+ <div class="container">
+    
     {{#each cart_products as | products|}}
       {{!-- <button class="category_btn" data-id={{subCategory.id}}>{{subCategory.name}}</button> --}}
-    <div class="card" style="width: 18rem;">
-            <img src={{item_image}} class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">Product:{{item_name}}</h5>         
-            <p class="card-text">Price:{{item_price}}</p>
-              <p class="card-text">{{quantity}}</p>
-             <p class="card-text">total :{{total}}</p>
+    <div class="card " style="width: 18rem;">
+            <img src={{item_image}} class="card-img-top" alt="..."> </div>
+            {{!-- <div class="card-body col-md"> --}}
+            <h5 class="card-title ">{{item_name}}</h5> 
+             {{!-- </div>        --}}
+            <p class="card-text ">Price: ${{item_price}}</p>
+              <p class="card-text">Qunatity :{{quantity}}</p>
+             <p class="card-text">total :${{total}}</p>
 
             {{!-- <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button> --}}
-            </div>
-        </div>
+            {{!-- </div>
+        </div> --}}
     {{/each}}
+ 
   </div>
   <div class="products-container">
     
   </div>
 
 </section>
-
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"
+  ></script>
 {{!-- <script src="/js/renderCart.js"></script> --}}

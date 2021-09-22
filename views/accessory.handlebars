@@ -19,7 +19,7 @@
             <p class="card-text">{{store_name}}</p>
             <p class="card-text">In stock :{{stock}}</p>
             <p class="card-text">Price :${{price}}</p>
-            <button data-id=${{id}} onClick=addToCart()  class="btn btn-secondary" >Add to Cart </button>
+            <button data-id=${{id}} onClick=addToCart({{id}},'{{access_name}}','{{store_name}}',{{stock}},{{price}},'{{image}}')  class="btn btn-secondary" >Add to Cart </button>
             </div>
         </div>
         
@@ -32,7 +32,4 @@
 {{/if}}
 <script src="/js/renderCart.js"></script>
 
-{{!-- addToCart({{id}},'{{image}}',{{access_name}},'{{store_name}}',
-           ' {{stock}}','{{price}}') --}}
 
-addToCart({id : {{id}},access_name :{{access_name}} })

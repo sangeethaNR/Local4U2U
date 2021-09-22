@@ -1,18 +1,19 @@
-// function addToCart(id,image,access_name,store_name,stock,price) {
-  function addToCart(){
-//   console.log(obj.id);
-//   console.log("imsg:" + obj.access_name)
-//  // const data = JSON.parse(body);
-//   const id =obj.id;
-//   const name = obj.access_name;
+ function addToCart(id,name,store_name,stock,price,image) {
+  // function addToCart(name){
+  //  console.log(name);
+  // }
+  console.log("imsg:" + name)
+ // const data = JSON.parse(body);
+  // const id =obj.id;
+  // const name = obj.access_name;
 
 fetch("/cart", {
   method: "POST",
   body: JSON.stringify({
-    product_id: 1,
-    item_name: "Shell Bracelet",
-    item_price: 4,
-    item_image: '/images/shell-bracelet.jpg',
+    product_id: id,
+    item_name: name,
+    item_price: price,
+    item_image: image,
     quantity: 1,
   }),
   headers: {

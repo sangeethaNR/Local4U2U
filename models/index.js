@@ -24,6 +24,7 @@ SubCategory.belongsTo(Category,{
 });
 Order.belongsTo(User, {
     foreignKey: 'user_id'
+
 })
 
 

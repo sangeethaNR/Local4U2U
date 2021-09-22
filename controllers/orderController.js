@@ -1,5 +1,6 @@
 // Require
-const router = require("express").Router();;
+const router = require("express").Router();
+const withAuth = require('../utils/auth');
 const {Order,User} = require("../models");
 
 // var router = express.Router();
@@ -41,27 +42,36 @@ const {Order,User} = require("../models");
 // });
 router.post("/", async (req, res) => {
   const { product_id, item_name, item_image, item_price, quantity } = req.body;
-  const newQuantity = quantity;
+  
   console.log('seesion id:' + req.session.user_id)
   const findProduct = await Order.findOne({
     where:{  
       product_id: product_id,
       user_id :req.session.user_id }, 
       attributes: ['quantity',
-                      'id'
+                      'id',
+                      'total',
+                      'item_price'
               ]
   });
 
   if(findProduct != null){
     try{
-    const updateProduct = Order.update({
-      quantity: quantity + newQuantity,
-     },
-     {
-        where: {
-            id: findProduct.id
-        }
-    });
+      Order.increment(
+        { quantity: +1,
+         total :findProduct.item_price *(findProduct.quantity)
+        },
+        { where: { id: findProduct.id } }
+      );
+    // const updateProduct = Order.update({
+    //   quantity: quantity + 1,
+    //   total : quantity * item_price
+    //  },
+    //  {
+    //     where: {
+    //         id: findProduct.id
+    //     }
+    // });
   
   res.status(200).json(updateProduct);
   }
@@ -80,8 +90,8 @@ try{
       item_name:item_name,
       item_image:item_image,
       item_price:parseInt(item_price),
-      quantity:parseInt(quantity),
-      total: quantity * item_price,
+      quantity:quantity,
+      total: (quantity * item_price),
       product_id:product_id
     });
     res.json(createdOrder);
@@ -96,8 +106,37 @@ catch(error){
 
 });
 
-router.get("/", (req, res) => {
-  res.render("cart");
+router.get("/",withAuth,async (req, res) => {
+try{
+  console.log(req.session.user_id)
+  const productInCart = await Order.findAll({
+    where:{  
+   user_id: req.session.user_id},
+  //  attributes: [ 'item_image', 'item_name','item_price','quantity',
+  //   [ sequelize.literal(
+  //       'COALESCE(item_price, 0) * COALESCE(quantity, 0)'
+  //     ), 'NewPrice'
+  //   ]
+ // ],
+  
+
+  });
+//console.log('post data : ' + postData);
+  const cart_products = productInCart.map((cart) => cart.get({ plain: true }));
+//    console.log('dashboard_post without: ' + dashboard_post);
+
+console.log("cart_products:" + JSON.stringify(cart_products));
+  res.render('cart', {
+    cart_products,
+    logged_in: true
+  });
+
+}
+catch(error){
+  res.status(500).json(error);
+
+}
+  
 });
 
 module.exports = router;

@@ -153,7 +153,7 @@ function animation() {
     });
     toast({
         type:'success',
-        title: 'Added to shopping cart'
+        title: 'Added to ping cart'
     });
 }
 

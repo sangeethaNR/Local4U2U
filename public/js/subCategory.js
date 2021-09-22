@@ -25,10 +25,10 @@ function displayProducts(data) {
         if(item.product_name) name = item.product_name
         console.log(name)
         output = `
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 12rem; align: center; height= auto; display: inline">
             <img src=${item.image} class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">${name}</h5>
+            <div class="card-bodystyle" width: 12rem; align: center; height= auto">
+            <h5 class="card-title"  >${name}</h5>
             <p class="card-text">${item.store_name}</p>
             <p class="card-text">In stock :${item.stock}</p>
             <p class="card-text">Price :$${item.price}</p>

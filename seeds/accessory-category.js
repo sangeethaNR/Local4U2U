@@ -30,7 +30,15 @@ const accessData = [
 
         {
             access_name:'Woven-Bag',
-           image:'/images/Woven-Bag.png',
+            image:'/images/Woven-Bag.png',
+            stock:30,
+            price:35,
+            store_name:'ClothesMax',
+            category_id:2
+        },
+        {
+            access_name:'Grey-Scarf',
+            image:'/images/scarf.jpg',
             stock:30,
             price:35,
             store_name:'ClothesMax',

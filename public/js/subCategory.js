@@ -1,5 +1,5 @@
 const buttons = document.querySelectorAll(".category_btn");
-const productsContainer = document.querySelector(".products-container")
+const productsContainer = document.querySelector(".products-container .row")
 
 function fetchData(e) {
   const id = window.location.toString().split("/")[
@@ -25,16 +25,18 @@ function displayProducts(data) {
         if(item.product_name) name = item.product_name
         console.log(name)
         output = `
-        <div class="card" style="width: 12rem; align: center; height= auto; display: inline">
-            <img src=${item.image} class="card-img-top" alt="...">
-            <div class="card-bodystyle" width: 12rem; align: center; height= auto">
-            <h5 class="card-title"  >${name}</h5>
-            <p class="card-text">${item.store_name}</p>
-            <p class="card-text">In stock :${item.stock}</p>
-            <p class="card-text">Price :$${item.price}</p>
-            <label for="quantity">Quantity:</label>
-           <input type="number" id="quantity" name="quantity" min="1" max="5" value ="1">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="card" style="width: 12rem; align: center; height= auto; display: inline">
+              <img src=${item.image} class="card-img-top" alt="..." style="height: 150px">
+              <div class="card-bodystyle" width: 12rem; align: center; height= auto">
+              <h5 class="card-title"  >${name}</h5>
+              <p class="card-text">${item.store_name}</p>
+              <p class="card-text">In stock :${item.stock}</p>
+              <p class="card-text">Price :$${item.price}</p>
+              <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="5">
             <button data-id=${item.id} data-name=${name} class="btn btn-secondary" >Add to Cart </button>
+          </div>
         </div>
         `;
         productsContainer.innerHTML += output
@@ -43,6 +45,15 @@ function displayProducts(data) {
         })
       })
 }
+
+/*
+  <parent>
+    <child>
+      <child>
+      </child>
+    </child>
+  </parent>
+*/
 
 
 buttons.forEach((button) => {

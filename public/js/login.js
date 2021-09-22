@@ -37,7 +37,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/category');
+      document.location.replace('/api/category');
     } else {
       alert(response.statusText);
     }

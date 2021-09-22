@@ -50,7 +50,27 @@ const clothesData = [
     category_id: 3,
     sub_category_id:6
 
-  }
+  },
+  {
+    product_name: 'floral blouse',
+    image: '/images/floralblouse.jpg',
+    stock: 50,
+    price: 40.99,
+    store_name: 'ClothesMax',
+    category_id: 3,
+    sub_category_id:6
+
+  },
+  {
+    product_name: 'Strawberry Dress',
+    image: '/images/StrawberryDress.jpg',
+    stock: 50,
+    price: 50.99,
+    store_name: 'ClothesMax',
+    category_id: 3,
+    sub_category_id:6
+
+  },
 ];
 
 const seedClothes = () => Clothes.bulkCreate(clothesData);

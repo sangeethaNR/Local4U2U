@@ -188,6 +188,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
+  color:#8BB174!important
 }
 
 @media (min-width: 1200px) {
@@ -218,6 +219,7 @@ h3, .h3 {
 
 h4, .h4 {
   font-size: calc(1.275rem + 0.3vw);
+  color: #8BB174!important
 }
 
 @media (min-width: 1200px) {
@@ -471,6 +473,8 @@ button:not(:disabled),
 [type="reset"]:not(:disabled),
 [type="submit"]:not(:disabled) {
   cursor: pointer;
+  background-color: #8BB174;
+  border-radius: 3px;
 }
 
 ::-moz-focus-inner {
@@ -5018,7 +5022,7 @@ fieldset:disabled .btn {
   color: black;
   margin: 5px;
 
-  
+
 }
 
 .card-title {

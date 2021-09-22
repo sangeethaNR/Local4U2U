@@ -44,7 +44,7 @@ body {
 }
 .hero-content {
   position: relative;
-  top: 50%;
+  top: 40%;
   /* right: 25% */
   margin: 0 auto
 }
@@ -57,6 +57,14 @@ body {
   border: 1px solid #fff;
   width: fit-content;
   text-decoration: none
+}
+
+ li.nav-item, .shopping-cart {
+  font-size: 1.2rem
+}
+
+.header-nav {
+  margin-bottom: 6.5rem
 }
 
 

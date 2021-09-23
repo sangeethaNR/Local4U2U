@@ -100,10 +100,12 @@
  console.log('data'+ data)
  var sum=0;
 for (var i=0;i<data.length;i++) {
-    console.log(data[i].className + " " + data[i].childNodes[0].nodeValue);
+ // console.log(data[i].nextElementSibling.innerHTML);
+  let noOfProducts =data[i].nextElementSibling.innerHTML;
+   // console.log(data[i].className + " " + data[i].childNodes[0].nodeValue);
     var price = data[i].childNodes[0].nodeValue.toString().split('$')[ data[i].childNodes[0].nodeValue.toString().split('$').length - 1];
    
-    sum=sum + parseInt(price);
+    sum=sum +(parseInt(price) * parseInt(noOfProducts));
     document.getElementById('total').textContent  = '$' + sum
 
 }

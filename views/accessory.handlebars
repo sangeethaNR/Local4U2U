@@ -19,8 +19,8 @@
             <p class="card-text">{{store_name}}</p>
             <p class="card-text">In stock :{{stock}}</p>
             <p class="card-text">Price :${{price}}</p>
-             <input type="number" id="quantity" name="quantity" min="1" max="5" value="1">
-            <button data-id=${{id}} onclick="addAccToCart('{{id}}','{{access_name}}', {{price}},'{{image}}', event)"  class="btn btn-secondary" >Add to Cart </button>
+             <input type="number" id="quantity"  name="quantity" min="1" max="5" value="1">
+            <button data-id=${{id}} onclick="addAccToCart({{id}},'{{access_name}}', {{price}},'{{image}}', event)"  class="btn btn-secondary" >Add to Cart </button>
             {{!-- <button data-id={{id}} data-price={{price}} data-name={{store_name}} onclick=addAccToCart("{{accessory}}", event)  class="btn btn-secondary" >Add to Cart </button> --}}
             </div>
         </div>
@@ -40,9 +40,10 @@
     let quantityElement = event.target.previousElementSibling
     quantityElement.defaultValue = 1 // set the default value for the inputfield to be 1
     const quantity = quantityElement.value;
+    console.log("quantity:" + quantity)
     fetchApi(body , quantity)
   }
 </script>
-<script src="/js/renderCart.js"></script>
+<script src="/js/cart.js"></script>
 
 

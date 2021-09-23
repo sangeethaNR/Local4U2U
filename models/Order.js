@@ -19,11 +19,11 @@ Order.init(
       },
      
       item_name: {
-          type: DataTypes.STRING,
+          type: DataTypes.CHAR,
           allowNull: false
       },
       item_image: {
-        type: DataTypes.STRING,
+        type: DataTypes.CHAR,
         allowNull: false
       },
       item_price: {

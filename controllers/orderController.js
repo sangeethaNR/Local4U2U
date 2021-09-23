@@ -42,7 +42,8 @@ const {Order,User} = require("../models");
 // });
 router.post("/",withAuth, async (req, res) => {
   const { product_id, item_name, item_image, item_price, quantity,total} = req.body;
-  
+  //console.log('inside cart post route:' + JSON.stringify(req.body))
+  //console.log('seesion id:' + req.session.user_id)
   const findProduct = await Order.findOne({
     where:{  
       product_id: product_id,
@@ -56,7 +57,7 @@ router.post("/",withAuth, async (req, res) => {
 
   if(findProduct != null){
     try{
-      Order.increment(
+      await Order.increment(
         { quantity: +1,
          total :findProduct.item_price *(findProduct.quantity)
         },
@@ -72,7 +73,7 @@ router.post("/",withAuth, async (req, res) => {
     //     }
     // });
   
-  res.status(200).json(updateProduct);
+  res.status(200).json(findProduct);
   }
 catch (err) {
   res.status(400).json(err);
@@ -93,7 +94,7 @@ try{
       total: total,
       product_id:product_id
     });
-    res.json(createdOrder);
+    res.status(200).json(createdOrder);
   }
 
 catch(error){
@@ -107,7 +108,7 @@ catch(error){
 
 router.get("/",withAuth,async (req, res) => {
 try{
-  console.log(req.session.user_id)
+  //console.log(req.session.user_id)
   const productInCart = await Order.findAll({
     where:{  
    user_id: req.session.user_id},

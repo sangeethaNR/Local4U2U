@@ -58,7 +58,7 @@ router.post("/",withAuth, async (req, res) => {
   if(findProduct != null){
     try{
       await Order.increment(
-        { quantity: +1,
+        { quantity: +quantity,
          total :findProduct.item_price *(findProduct.quantity)
         },
         { where: { id: findProduct.id } }

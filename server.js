@@ -1,3 +1,4 @@
+// Import express package
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -8,6 +9,7 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// Initialize our app variable by setting it to the value of express()
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -24,6 +26,7 @@ const sess = {
   })
 };
 
+// Sets up Logged_in/ Logged_out handlebar  
 app.use(session(sess));
 app.use((req, res, next) => {
   res.locals.logged_in = req.session.logged_in
@@ -33,10 +36,11 @@ app.use((req, res, next) => {
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-// Handlebars.registerPartial('cart', '{{prefix}}');
 
+// Sets up the Express app to handle data parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// Serve images, css files, js files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);

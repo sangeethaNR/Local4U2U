@@ -1,12 +1,5 @@
-// const Swal = require("sweetalert2")
 
-
-
-// import Swal from 'sweetalert2'
 function fetchApi(body, numerOfProduct) {
-  //const data = JSON.parse(body);
-  //console.log('inside fetchAPI' + JSON.stringify(body));
-  //console.log('quantity:' + numerOfProduct)
   fetch("/cart", {
     method: "POST",
     body: JSON.stringify({
@@ -25,6 +18,7 @@ function fetchApi(body, numerOfProduct) {
     .then((data) => {
       console.log(data);
       console.log("item added");
+      //Sweetalert2 Pop up feature
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -44,6 +38,8 @@ function fetchApi(body, numerOfProduct) {
       });
     });
 }
+
+//Function that adds products to cart
 function addToCart(body, event) {
   const data = JSON.parse(body);
  

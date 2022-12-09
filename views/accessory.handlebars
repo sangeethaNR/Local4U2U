@@ -1,32 +1,19 @@
 <section class="container">
-{{!-- {{#if logged_in}}
-{{#each accessories as |accessory|}}
-{{> accessory-partials}}
- 
-   
-{{/each}}
-</section>
-<!-- Otherwise, provide a link to login -->
-{{else}}
-<a href="/login">You must login first to view the Categories</a>
-{{/if}} --}}
-{{#if logged_in}}
-{{#each accessories as |accessory|}}
+  {{#if logged_in}}
+  {{#each accessories as |accessory|}}
   <div class="card" style="width: 18rem;">
-            <img src={{image}} class="card-img-top" alt="..." style="height: 150px;">
-            <div class="card-body">
-            <h5 class="card-title">{{access_name}}</h5>
-            <p class="card-text">{{store_name}}</p>
-            <p class="card-text">In stock :{{stock}}</p>
-            <p class="card-text">Price :${{price}}</p>
-             <input type="number" id="quantity"  name="quantity" min="1" max="5" value="1">
-            <button data-id=${{id}} onclick="addAccToCart({{id}},'{{access_name}}', {{price}},'{{image}}', event)"  class="btn btn-secondary" >Add to Cart </button>
-            {{!-- <button data-id={{id}} data-price={{price}} data-name={{store_name}} onclick=addAccToCart("{{accessory}}", event)  class="btn btn-secondary" >Add to Cart </button> --}}
-            </div>
-        </div>
-        
-        {{/each}}
-        
+    <img src={{image}} class="card-img-top" alt="..." style="height: 150px;">
+    <div class="card-body">
+      <h5 class="card-title">{{access_name}}</h5>
+      <p class="card-text">{{store_name}}</p>
+      <p class="card-text">In stock :{{stock}}</p>
+      <p class="card-text">Price :${{price}}</p>
+      <input type="number" id="quantity" name="quantity" min="1" max="5" value="1">
+      <button data-id=${{id}} onclick="addAccToCart({{id}},'{{access_name}}', {{price}},'{{image}}', event)"
+        class="btn btn-secondary">Add to Cart </button>
+    </div>
+  </div>
+  {{/each}}
 </section>
 <!-- Otherwise, provide a link to login -->
 {{else}}
@@ -35,15 +22,13 @@
 <script src="/js/cart.js"></script>
 <script>
   function addAccToCart(id, name, price, image, event) {
-    const body = {id, name, price, image}
-    
+    const body = { id, name, price, image }
+
     let quantityElement = event.target.previousElementSibling
     quantityElement.defaultValue = 1 // set the default value for the inputfield to be 1
     const quantity = quantityElement.value;
     console.log("quantity:" + quantity)
-    fetchApi(body , quantity)
+    fetchApi(body, quantity)
   }
 </script>
 <script src="/js/cart.js"></script>
-
-
